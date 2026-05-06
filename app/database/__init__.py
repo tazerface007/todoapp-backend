@@ -8,6 +8,8 @@ def _getDBFilePath()->str:
     instance_dir = current_dir.parent.parent / "instance"
     db_path = instance_dir / "todo.db"
     instance_dir.mkdir(parents=True, exist_ok=True)
+    return f'sqlite:///{db_path.absolute()}'
+
 
 SQLALCHEMY_DATABASE_URL = _getDBFilePath()
 
