@@ -14,7 +14,7 @@ async def custom_404_handler(request: Request, exc: Exception):
     )
 
 def create_app()->FastAPI:
-    app = FastAPI()
+    app = FastAPI(root_path='/api')
     app.include_router(router=router)
     app.add_middleware(HighPerformanceMiddleware, 
         exclude_paths={"/login", "/login/", "/.well-known/appspecific/com.chrome.devtools.json"}                   
