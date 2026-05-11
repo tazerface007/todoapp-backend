@@ -25,3 +25,13 @@ class Base(DeclarativeBase):
     pass
 
 
+
+
+# 5. Dependency for FastAPI Routes
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
