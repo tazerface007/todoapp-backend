@@ -1,1 +1,5 @@
-Generic single-database configuration.
+# Migrations Alembic
+
+## Usage
+
+1. Add Column or configuration changes to the Base class of your Table.
